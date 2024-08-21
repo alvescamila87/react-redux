@@ -5,6 +5,7 @@ import Fragmento from './components/basicos/Fragmento'
 import Aleatorio from './components/basicos/Aleatorio'
 import Card from "./components/layout/Card"
 import './App.css'
+import Familia from "./components/basicos/Familia"
 
 // funcao nomeada: export default function App(props){}
 // funcao anônima: export default function(props){}
@@ -15,6 +16,9 @@ export default () =>  (
             <h1>Fundamentos React</h1>
 
             <div className="Cards">
+                <Card titulo="#05 - Componente com filhos" color="#00C8F8">
+                    <Familia sobrenome="Abraão"></Familia>
+                </Card>
                 <Card titulo="#04 - Desafio Aleatório" color="#FA6900">    
                     <Aleatorio        
                         min={1}
