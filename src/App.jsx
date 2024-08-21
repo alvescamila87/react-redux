@@ -9,6 +9,7 @@ import Familia from "./components/basicos/Familia"
 import FamiliaMembro from "./components/basicos/FamiliaMembro"
 import ListaAlunos from "./components/repeticao/ListaAlunos"
 import TabelaProdutos from "./components/repeticao/TabelaProdutos"
+import ParOuImpar from "./components/condicional/ParOuImpar"
 
 // funcao nomeada: export default function App(props){}
 // funcao anônima: export default function(props){}
@@ -19,6 +20,9 @@ export default () =>  (
             <h1>Fundamentos React</h1>
 
             <div className="Cards">
+                <Card titulo='#09 - Par ou Ímpar' color="#982395">
+                    <ParOuImpar numero={13}></ParOuImpar>
+                </Card>
                 <Card titulo="#07 - Desafio Produtos" color="#3A9AD9">
                     <TabelaProdutos></TabelaProdutos>
                 </Card>

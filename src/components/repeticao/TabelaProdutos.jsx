@@ -29,7 +29,7 @@ export default (props) => {
     function getLinhas() {
         return produtos.map((produto, i) => {
             return (
-                <tr key={produto.id} className={i % 2 == 0 ? 'Par' : 'Ímpar'}>
+                <tr key={produto.id} className={i % 2 === 0 ? 'Par' : 'Ímpar'}>
                     <td>{produto.id}</td>
                     <td>{produto.nome}</td>
                     <td>R$ {produto.valor.toFixed(2).replace('.', ',')}</td>
