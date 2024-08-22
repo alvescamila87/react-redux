@@ -13,7 +13,7 @@ export default props => {
                 <p>Welcome to the validation 2!</p>
             </If> */} 
             <If test={ usuario && usuario.nome }>
-                <p>Welcome to the IF</p>
+                    Seja bem vindo <strong>{ usuario.nome }</strong>!
                 <Else>
                     <p>Welcome to the ELSE</p>
                 </Else>

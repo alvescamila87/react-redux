@@ -11,6 +11,9 @@ import ListaAlunos from "./components/repeticao/ListaAlunos"
 import TabelaProdutos from "./components/repeticao/TabelaProdutos"
 import ParOuImpar from "./components/condicional/ParOuImpar"
 import UsuarioInfo from "./components/condicional/UsuarioInfo"
+import DiretaPai from "./components/comunicacao/DiretaPai"
+import IndiretaPai from "./components/comunicacao/IndiretaPai"
+
 
 // funcao nomeada: export default function App(props){}
 // funcao anônima: export default function(props){}
@@ -21,6 +24,12 @@ export default () =>  (
             <h1>Fundamentos React</h1>
 
             <div className="Cards">
+                <Card titulo="#10 - Comunicação indireta" color="#8BAD39">
+                    <IndiretaPai/>
+                </Card>
+                <Card titulo="#09 - Comunicação direta" color="#59323C">
+                    <DiretaPai/>                   
+                </Card>
                 <Card titulo='#08 - Rendeziração condicional' color="#982395">
                     <ParOuImpar numero={13}/>
                     <UsuarioInfo usuario={{ nome: 'Zebedeu' }} />
