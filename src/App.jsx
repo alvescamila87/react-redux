@@ -10,6 +10,7 @@ import FamiliaMembro from "./components/basicos/FamiliaMembro"
 import ListaAlunos from "./components/repeticao/ListaAlunos"
 import TabelaProdutos from "./components/repeticao/TabelaProdutos"
 import ParOuImpar from "./components/condicional/ParOuImpar"
+import UsuarioInfo from "./components/condicional/UsuarioInfo"
 
 // funcao nomeada: export default function App(props){}
 // funcao anônima: export default function(props){}
@@ -20,8 +21,11 @@ export default () =>  (
             <h1>Fundamentos React</h1>
 
             <div className="Cards">
-                <Card titulo='#09 - Par ou Ímpar' color="#982395">
-                    <ParOuImpar numero={13}></ParOuImpar>
+                <Card titulo='#08 - Rendeziração condicional' color="#982395">
+                    <ParOuImpar numero={13}/>
+                    <UsuarioInfo usuario={{ nome: 'Zebedeu' }} />
+                    {/*<UsuarioInfo usuario={{ email: 'zebe@email.com' }} />
+                    <UsuarioInfo usuario={{}} />                   */}
                 </Card>
                 <Card titulo="#07 - Desafio Produtos" color="#3A9AD9">
                     <TabelaProdutos></TabelaProdutos>
