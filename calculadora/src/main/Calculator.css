@@ -2,6 +2,9 @@
     height: 320px;
     width: 235px;
     border-radius: 5px;
-    overflow: hidden;
-    background-color: red; /* temporário */
+    overflow: hidden; 
+    
+   display: grid; /* lista de botões */
+   grid-template-columns: repeat(4, 25%); /* 4 colunas usando 25% */
+   grid-template-rows: 1fr 48px 48px 48px 48px 48px ;
 }
