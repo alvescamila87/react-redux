@@ -5,7 +5,7 @@ const About = props => {
     return (
         <div className="About"> 
             <h1>About</h1>
-            <p> This application was created...</p>
+            <h2> This application was created...</h2>
         </div>
     )
 }
