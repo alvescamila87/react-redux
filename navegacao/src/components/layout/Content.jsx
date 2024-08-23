@@ -4,16 +4,16 @@ import './Content.css'
 import Home from "../../views/examples/Home";
 import About from "../../views/examples/About";
 import Param from "../../views/examples/Param";
-//import NotFound
+import NotFound from "../../views/examples/NotFound";
 
 const Content = props => {
     return (
         <main className="Content">
             <Routes>
-                <Route path="/about" element={<About/>}/>
                 <Route path="/" exact element={<Home/>}/>
+                <Route path="/about" element={<About/>}/>
                 <Route path="/param/:id" element={<Param/>}/>
-                {/* <Route path="*" element={<NotFound/>}/> */}
+                <Route path="*" element={<NotFound/>}/>
             </Routes>
         </main>
     )
