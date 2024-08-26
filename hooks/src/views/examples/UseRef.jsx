@@ -4,16 +4,32 @@ import SectionTitle from '../../components/layout/SectionTitle'
 
 const UseRef = (props) => {
 
+    // Ex #01
     const [value1, setValue1] = useState("");
     const count = useRef(0);
+
+    // Ex #02
+    const [value2, setValue2] = useState("");
+    const myInput1 = useRef(null)
+    const myInput2 = useRef(null)
+
+    //console.log(myInput1.current)
+    //console.log(myInput2.current)
     
+    // Ex #01
     // forma 1 - em todas as modificações
     //count.current = count.current + 1;
 
     // forma 2 - só quando valor 1 for modificado
     useEffect(function() {
         count.current = count.current + 1
+        myInput2.current.focus();
     }, [value1])
+
+    useEffect(function() {
+        count.current++
+        myInput1.current.focus();
+    }, [value2])
 
     return (
         <div className="UseRef">
@@ -32,9 +48,20 @@ const UseRef = (props) => {
                 <input 
                     type="text" 
                     className="input"
+                    ref={myInput1}
                     value={value1}
                     onChange={e => setValue1(e.target.value)}
                 />
+            </div>
+            <SectionTitle title="Exercício #02" />
+            <div className="center">
+                <input 
+                    type="text" 
+                    className="input" 
+                    ref={myInput2}   
+                    value={value2}
+                    onChange={e => setValue2(e.target.value)}                     
+                />            
             </div>
         </div>
     )
