@@ -20,8 +20,24 @@ function reducer(state, action) {
             return {...state, number: state.number + 2}
         case 'login':
             return { ...state, user: { name: action.payload } }
+        case 'numberTimes7':
+            return { ...state, number: state.number * 7} 
+        case 'numberDivideBy25_v1':
+            // camila
+            return { ...state, number: parseInt(state.number / 25) };
+        case 'numberDivideBy25_v2':
+            // correção
+            return { ...state, number: state.number / 25 };
+        case 'numberParseInt':
+            // correção
+            return { ...state, number: parseInt(state.number) };
+        case 'addValueN':
+            // correção
+            return { ...state, number: state.number + action.payload };
         default: 
             return state
+
+               
     }
 }
 
@@ -37,11 +53,11 @@ const UseReducer = (props) => {
             />
             <SectionTitle title="Exemplo #01" />
             <div className="center">
-                {state.user ? 
+                {state.user ? (
                     <span className="text">{state.user.name}</span>
-                    : <span className="text">Sem usuário</span>
-                }
-                <span className="text">{state.number}</span>
+                    )    :  (<span className="text">Sem usuário</span> 
+                )}
+                <span className="text">{state.number}</span>            
                 <div>
                     <button 
                         className="btn"
@@ -52,6 +68,36 @@ const UseReducer = (props) => {
                         className="btn"
                         onClick={() => dispatch({ type: 'add2ToNumber' })}
                     >+2                        
+                    </button>
+                    <button 
+                        className="btn"
+                        onClick={() => dispatch({ type: 'numberTimes7' })}
+                    >*7                        
+                    </button>
+                    <button 
+                        className="btn"
+                        onClick={() => dispatch({ type: 'numberDivideBy25_v1' })}
+                    >/25 version 1                       
+                    </button>
+                    <button 
+                        className="btn"
+                        onClick={() => dispatch({ type: 'numberDivideBy25_v2' })}
+                    >/25 version 2                        
+                    </button>
+                    <button 
+                        className="btn"
+                        onClick={() => dispatch({ type: 'numberParseInt' })}
+                    >Change to INT                      
+                    </button>
+                    <button 
+                        className="btn"
+                        onClick={() => dispatch({ type: 'addValueN', payload: -9 })}
+                    >-9 add value                       
+                    </button>
+                    <button 
+                        className="btn"
+                        onClick={() => dispatch({ type: 'addValueN', payload: 13 })}
+                    >13 add value                   
                     </button>
                 </div>
             </div>
