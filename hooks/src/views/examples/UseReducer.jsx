@@ -1,6 +1,10 @@
 import React, { useReducer } from 'react'
 import PageTitle from '../../components/layout/PageTitle'
 import SectionTitle from '../../components/layout/SectionTitle'
+import  { initialState, reducer } from '../../store';
+import { add2ToNumber, login } from '../../store/actions';
+
+/* infos transferids para "store > index.js"
 
 const initialState = {
     cart: [],
@@ -10,10 +14,10 @@ const initialState = {
     number: 0
 }
 
-/* objetivo da função reducer, pegar o estado atual, que é o inicialState, 
+objetivo da função reducer, pegar o estado atual, que é o inicialState, 
 para cada ação que for acontecendo, vc deve evoluir um atributo 
 (adicionar 2 ao número), por exemplo
-*/
+
 function reducer(state, action) {
     switch(action.type) {
         case 'add2ToNumber':
@@ -35,11 +39,10 @@ function reducer(state, action) {
             // correção
             return { ...state, number: state.number + action.payload };
         default: 
-            return state
-
-               
+            return state               
     }
 }
+*/
 
 const UseReducer = (props) => {
 
@@ -61,12 +64,14 @@ const UseReducer = (props) => {
                 <div>
                     <button 
                         className="btn"
-                        onClick={() => dispatch({ type: 'login', payload: 'Madalena' })}
+                        //onClick={() => dispatch({ type: 'login', payload: 'Madalena' })}
+                        onClick={() => login(dispatch, 'Zebedeu')}
                     >Login                        
                     </button>
                     <button 
                         className="btn"
-                        onClick={() => dispatch({ type: 'add2ToNumber' })}
+                        //onClick={() => dispatch({ type: 'add2ToNumber' })}
+                        onClick={() => add2ToNumber(dispatch)}
                     >+2                        
                     </button>
                     <button 
