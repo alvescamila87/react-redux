@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+# Fundamentos React
+![image](https://github.com/user-attachments/assets/2cf93b79-ff89-4d89-9284-780c67623d96)
+![image](https://github.com/user-attachments/assets/0b9ac81c-9b42-4461-94df-328f1e199c1c)
+
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
