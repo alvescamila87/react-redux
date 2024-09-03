@@ -2,15 +2,32 @@ import { createStore, combineReducers } from 'redux';
 
 // estado compartilhado da aplicação
 const reducers = combineReducers ({
+    // reducer 1(numeros)
     numeros: function(state, action) {
+        //console.log("Reducer Números...")
         //console.log(state, ' ', action)
-        return {
-            min: 7,
-            max: 31
+
+        switch(action.type) {
+            case 'NUM_MIN_ALTERADO':
+                return {
+                    ...state,
+                    min: action.payload
+                }
+            default: 
+                return {
+                    min: 7,
+                    max: 31
+                }
         }
+        // return {
+        //     min: 7,
+        //     max: 31
+        // }
     },
+    // reducer 2(nomes)
     nomes: function(state, action) {
-        //console.log(state, ' ', action)
+        console.log("Reducer Nomes...")
+        console.log(state, ' ', action)
         return [
             'Madalena',
             'Zebedeu',
