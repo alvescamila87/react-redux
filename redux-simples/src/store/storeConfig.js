@@ -1,15 +1,16 @@
 import { createStore, combineReducers } from 'redux';
 
+// estado compartilhado da aplicação
 const reducers = combineReducers ({
     numeros: function(state, action) {
-        console.log(state, ' ', action)
+        //console.log(state, ' ', action)
         return {
-            min: 1,
-            max: 10
+            min: 7,
+            max: 31
         }
     },
     nomes: function(state, action) {
-        console.log(state, ' ', action)
+        //console.log(state, ' ', action)
         return [
             'Madalena',
             'Zebedeu',
