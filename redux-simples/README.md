@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+# REDUX-SIMPLES
+![image](https://github.com/user-attachments/assets/3e9aa200-0136-4656-82c8-9190f20b98d1)
+![image](https://github.com/user-attachments/assets/8f396176-6d0d-4b4c-b182-b6e73bbf30b8)
+
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
