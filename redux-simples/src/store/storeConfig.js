@@ -1,9 +1,11 @@
 import { createStore, combineReducers } from 'redux';
+import numerosReducer from './reducers/numeros'
 
 // estado compartilhado da aplicação
 const reducers = combineReducers ({
     // reducer 1(numeros)
-    numeros: function(state, action) {
+    numeros: numerosReducer,
+    /*numeros: function(state, action) {
         //console.log("Reducer Números...")
         //console.log(state, ' ', action)
 
@@ -28,9 +30,9 @@ const reducers = combineReducers ({
         //     min: 7,
         //     max: 31
         // }
-    },
+    },*/
     // reducer 2(nomes)
-    nomes: function(state, action) {
+    /*nomes: function(state, action) {
         console.log("Reducer Nomes...")
         console.log(state, ' ', action)
         return [
@@ -38,7 +40,7 @@ const reducers = combineReducers ({
             'Zebedeu',
             'Ester'
         ]
-    }
+    }*/
 
 })
 
