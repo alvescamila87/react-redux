@@ -1,0 +1,34 @@
+.Card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    /*background-color: red;*/
+}
+
+.Card .Header {
+    display: flex;
+    justify-content: center;
+}
+
+.Card .Header .Title {
+    flex: 1;
+    padding: 5px;
+    /* background-color: brown; */
+}
+
+.Card .Content {
+    padding: 20px;
+}
+
+.Card.Red .Header { color: #fff; background-color:  #c62828; }
+.Card.Red .Content { background-color: #f44336; }
+
+.Card.Green .Header { background-color: #2e7d32; }
+.Card.Green .Content { background-color: #4caf50; }
+
+.Card.Blue .Header { background-color: #1565c0; }
+.Card.Blue .Content { background-color: #2196f3; }
+
+.Card.Purple .Header { background-color: #6A1B9A; }
+.Card.Purple .Content { background-color: #9c27b0; }
