@@ -6,11 +6,11 @@ import { connect } from 'react-redux'
 /* Forma 1: export defaul props => { */
 /* Forma 2: const Media = props => { */
 /* Forma 3: function Media (props) { */
-function Media (props) {
+function Media(props) {
 
     //console.log(props.numeros)
     const { min, max } = props
-    console.log(props)
+    //console.log(props)
 
     return (
         <Card title="Média dos números" green>
