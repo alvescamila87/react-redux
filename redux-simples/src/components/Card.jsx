@@ -1,6 +1,9 @@
 import React from "react";
 import './Card.css'
 
+/**
+ * Aplicar cor no card de acordo com a prop: Card + props
+ */
 function getColor(props) {
     if(props.red) return "Red"
     if(props.green) return "Green"
