@@ -14,3 +14,6 @@ const connectToDatabase = () => {
 };
 
 module.exports = connectToDatabase;
+
+// exibir mensagem no PT-BR no mongoBD
+mongoose.Error.messages.general.required = "O atributo '{PATH}' é obrigatório."
