@@ -1,4 +1,4 @@
-// criar schema no mongodb
+// criar mapeamento de schema no mongodb
 
 const restful = require('node-restful')
 const mongoose = restful.mongoose

@@ -1,3 +1,4 @@
+// mongoose: integração entre mongoBD e express
 const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 
