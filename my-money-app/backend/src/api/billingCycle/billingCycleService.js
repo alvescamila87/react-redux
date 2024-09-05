@@ -18,14 +18,14 @@ BillingCycle.route('get', (req, res, next) => {
     })
 })
 
-// atualização 2 em relação ao curso
+// serviço customizado: summary (sumário de pagamentos)
 BillingCycle.route('summary', (req, res, next) => {
     BillingCycle.aggregate([{ 
-        $project: {credit: {$sum: "$credits.value"}, debt: {$sum: "$debts.value"}} 
+        $project: {credit: {$sum: "$credits.value"}, debt: {$sum: "$debts.value"}} // valor projetado, pois não existe no schema do mongo
     }, { 
-        $group: {_id: null, credit: {$sum: "$credit"}, debt: {$sum: "$debt"}}
+        $group: {_id: null, credit: {$sum: "$credit"}, debt: {$sum: "$debt"}} // agregar os registros de projeção
     }, { 
-        $project: {_id: 0, credit: 1, debt: 1}
+        $project: {_id: 0, credit: 1, debt: 1} // extraindo o resultado final para aparecer apenas crédito e débito
     }], (error, result) => {
         if(error) {
             res.status(500).json({errors: [error]})
@@ -45,5 +45,7 @@ BillingCycle.route('count', (req, res, next) => {
         }
     })
 })
+
+
 
 module.exports = BillingCycle
