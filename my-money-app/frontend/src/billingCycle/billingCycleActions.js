@@ -6,6 +6,7 @@ import { showTabs, selectTab } from '../common/tab/tabActions'
 
 
 const BASE_URL = 'http://localhost:3003/api'
+const INITIAL_VALUES = {}
 
 export function getList() {
     const request = axios.get(`${BASE_URL}/billingCycles`)
@@ -23,10 +24,11 @@ export function create(values) {
                 toastr.success('Sucesso', 'Operação realizada com sucesso!')
                 // Usando redux-multi para disparar um array de actions
                 dispatch([
-                   resetForm('billingCycleForm'),
-                   getList(),
-                   selectTab('tabList'),
-                   showTabs('tabList','tabCreate')     
+                //    resetForm('billingCycleForm'),
+                //    getList(),
+                //    selectTab('tabList'),
+                //    showTabs('tabList','tabCreate')
+                init()     
                 ])
             })
             .catch(e => {
@@ -43,5 +45,15 @@ export function showUpdate(billingCyle){
         showTabs('tabUpdate'),
         selectTab('tabUpdate'),
         initialize('billingCycleForm', billingCyle)
+    ]
+}
+
+// função que representa como deve estar o estado inicial do ciclo de vida de pagamento
+export function init() {
+    return [
+        showTabs('tabList', 'tabCreate'),
+        selectTab('tabList'),
+        getList(),
+        initialize('billingCycleForm', INITIAL_VALUES)
     ]
 }
