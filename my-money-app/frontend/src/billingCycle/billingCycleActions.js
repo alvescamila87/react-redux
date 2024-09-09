@@ -36,3 +36,11 @@ export function create(values) {
     }
     
 }
+
+export function showUpdate(billingCyle){
+    // Usando redux-multi para disparar um array de actions
+    return [
+        showTabs('tabUpdate'),
+        selectTab('tabUpdate')
+    ]
+}
