@@ -17,26 +17,51 @@ export function getList() {
 }
 
 export function create(values) {
+    return submit(values, 'post')
+    
+    // passado para o function submit
+    //
+    // return dispatch => {
+    //     //console.log(values)
+    //     axios.post(`${BASE_URL}/billingCycles`, values)
+    //         .then(resp => {
+    //             toastr.success('Sucesso', 'Operação realizada com sucesso!')
+    //             // Usando redux-multi para disparar um array de actions
+    //             dispatch([
+    //             //    resetForm('billingCycleForm'),
+    //             //    getList(),
+    //             //    selectTab('tabList'),
+    //             //    showTabs('tabList','tabCreate')
+    //             init()     
+    //             ])
+    //         })
+    //         .catch(e => {
+    //             //toastr.warning('Erro', 'Operação não realizada!')
+    //             e.response.data.errors.forEach(error => toastr.error('Erro', error))
+    //         })
+    // }
+    
+}
+
+export function update(values) {
+    return submit(values, 'put')
+}
+
+// função não exportada, pois a utilização é interna apenas
+// para checar o método quando create, update and delete
+function submit(values, method) {
     return dispatch => {
-        //console.log(values)
-        axios.post(`${BASE_URL}/billingCycles`, values)
+        const id = values._id ? values._id : ''
+        axios[method](`${BASE_URL}/billingCycles/${id}`, values)
             .then(resp => {
                 toastr.success('Sucesso', 'Operação realizada com sucesso!')
-                // Usando redux-multi para disparar um array de actions
-                dispatch([
-                //    resetForm('billingCycleForm'),
-                //    getList(),
-                //    selectTab('tabList'),
-                //    showTabs('tabList','tabCreate')
-                init()     
-                ])
+                dispatch(init())
             })
             .catch(e => {
-                //toastr.warning('Erro', 'Operação não realizada!')
                 e.response.data.errors.forEach(error => toastr.error('Erro', error))
             })
     }
-    
+
 }
 
 export function showUpdate(billingCyle){
@@ -57,3 +82,4 @@ export function init() {
         initialize('billingCycleForm', INITIAL_VALUES)
     ]
 }
+
