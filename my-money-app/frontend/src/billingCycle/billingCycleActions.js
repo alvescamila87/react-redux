@@ -26,7 +26,7 @@ export function create(values) {
                    resetForm('billingCycleForm'),
                    getList(),
                    selectTab('tabList'),
-                   showTabs('tabeList','tabCreate')     
+                   showTabs('tabList','tabCreate')     
                 ])
             })
             .catch(e => {
