@@ -1,7 +1,7 @@
 // todos os action creators responsáveis por criar as ações
 import axios from 'axios'
 import { toastr } from 'react-redux-toastr'
-import { reset as resetForm } from 'redux-form'
+import { reset as resetForm, initialize } from 'redux-form'
 import { showTabs, selectTab } from '../common/tab/tabActions'
 
 
@@ -41,6 +41,7 @@ export function showUpdate(billingCyle){
     // Usando redux-multi para disparar um array de actions
     return [
         showTabs('tabUpdate'),
-        selectTab('tabUpdate')
+        selectTab('tabUpdate'),
+        initialize('billingCycleForm', billingCyle)
     ]
 }
