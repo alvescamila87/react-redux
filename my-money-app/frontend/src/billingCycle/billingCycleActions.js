@@ -3,6 +3,7 @@ import axios from 'axios'
 import { toastr } from 'react-redux-toastr'
 import { reset as resetForm, initialize } from 'redux-form'
 import { showTabs, selectTab } from '../common/tab/tabActions'
+import billingCycle from './billingCycle'
 
 
 const BASE_URL = 'http://localhost:3003/api'
@@ -18,7 +19,7 @@ export function getList() {
 
 export function create(values) {
     return submit(values, 'post')
-    
+
     // passado para o function submit
     //
     // return dispatch => {
@@ -47,6 +48,11 @@ export function update(values) {
     return submit(values, 'put')
 }
 
+
+export function remove(values) {
+    return submit(values, 'delete')
+}
+
 // função não exportada, pois a utilização é interna apenas
 // para checar o método quando create, update and delete
 function submit(values, method) {
@@ -70,6 +76,14 @@ export function showUpdate(billingCyle){
         showTabs('tabUpdate'),
         selectTab('tabUpdate'),
         initialize('billingCycleForm', billingCyle)
+    ]
+}
+
+export function showDelete(billingCycle) {
+    return[
+        showTabs('tabDelete'),
+        selectTab('tabDelete'),
+        initialize('billingCycleForm', billingCycle)
     ]
 }
 
