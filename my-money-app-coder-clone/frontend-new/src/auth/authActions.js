@@ -18,7 +18,14 @@ function submit(values, url) {
         dispatch([{ type: "USER_FETCHED", payload: resp.data }]);
       })
       .catch((e) => {
-        e.response.data.errors.forEach((error) => toastr.error("Erro", error));
+        //e.response.data.errors.forEach((error) => toastr.error("Erro", error));
+        if (e.response && e.response.data && e.response.data.errors) {
+          e.response.data.errors.forEach((error) =>
+            toastr.error("Erro", error)
+          );
+        } else {
+          toastr.error("Erro", "Ocorreu um erro ao processar sua solicitação.");
+        }
       });
   };
 }
