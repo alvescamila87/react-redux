@@ -6,3 +6,14 @@ function imprimir(nome, indice) {
 
 fabricantes.forEach(imprimir)
 fabricantes.forEach(fabricante => console.log(fabricante))
+
+// EXERCÍCIO
+
+const alunos = ['João', 'Maria', 'Zebedeu']
+
+function listarNomes(nome, index) {
+    console.log(`${index} - ${nome}`);
+}
+
+alunos.forEach(listarNomes)
+alunos.forEach(aluno => console.log(aluno));
