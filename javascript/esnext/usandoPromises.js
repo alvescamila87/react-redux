@@ -23,19 +23,19 @@ const getTurma = letra => {
 }
 
 // chamadas encadeadas (aninhadas = callback hell)
-let nomes = []
-getTurma('A').then(alunos => {
-    nomes = nomes.concat(alunos.map(a => `A: ${a.nome}`))
+// let nomes = []
+// getTurma('A').then(alunos => {
+//     nomes = nomes.concat(alunos.map(a => `A: ${a.nome}`))
 
-    getTurma('B').then(alunos => {
-        nomes = nomes.concat(alunos.map(a => `B: ${a.nome}`))
+//     getTurma('B').then(alunos => {
+//         nomes = nomes.concat(alunos.map(a => `B: ${a.nome}`))
 
-        getTurma("C").then(alunos => {
-            nomes = nomes.concat(alunos.map(a => `C: ${a.nome}`))
-            console.log(nomes)
-        })
-    })
-})
+//         getTurma("C").then(alunos => {
+//             nomes = nomes.concat(alunos.map(a => `C: ${a.nome}`))
+//             console.log(nomes)
+//         })
+//     })
+// })
 
 // com Promise, sem ter callback encadeada
 Promise.all([getTurma("A"), getTurma("B"), getTurma("C")])
@@ -43,3 +43,6 @@ Promise.all([getTurma("A"), getTurma("B"), getTurma("C")])
     //.then(x => console.log(x))
     .then(alunos => alunos.map(a => a.nome))
     .then(nomes => console.log(nomes))
+    .catch(e => console.log(e))
+
+getTurma("D").catch(e => console.log(e.message))
