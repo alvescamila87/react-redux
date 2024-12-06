@@ -3,13 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "webpack"
+    "start": "webpack",
+    "build": "cris-env NODE_ENV=production webpack",
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "cross-env": "5.1.5",
+    "optimize-css-assets-webpack-plugin": "4.0.1",
+    "uglifyjs-webpack-plugin": "1.2.5",
     "node-sass": "9.0.0",
     "mini-css-extract-plugin": "0.4.0",
     "css-loader": "0.28.11",
