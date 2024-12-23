@@ -3,5 +3,5 @@ import React from 'react';
 
 export default props => 
     <footer className='footer'>
-        Footer
+        <span>Desenvolvido com <i className="fa fa-heart text-danger"></i> por <strong>Camila</strong></span>
     </footer>
