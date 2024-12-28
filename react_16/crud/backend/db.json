@@ -1,11 +1,24 @@
 {
-    "users": [{
-        "id": 1,
-        "name": "Zebedeu Abraão",
-        "email": "zebedeu@cod3r.com.br"
-    }, {
-        "id": 2,
-        "name": "Rute Abraão",
-        "email": "rute@cod3r.com.br"
-    }]
+  "users": [
+    {
+      "id": 1,
+      "name": "Zebedeu Abraão",
+      "email": "zebedeu@cod3r.com.br"
+    },
+    {
+      "id": 2,
+      "name": "Rute Abraão",
+      "email": "rute@cod3r.com.br"
+    },
+    {
+      "name": "Madalena Abraão",
+      "email": "madalena@gmail.com",
+      "id": 3
+    },
+    {
+      "name": "Madalena Abraão",
+      "email": "madalena@gmail.com",
+      "id": 4
+    }
+  ]
 }
